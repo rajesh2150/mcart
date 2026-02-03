@@ -31,4 +31,16 @@ public class ProductService {
         }
 
     }
+
+    public ResponseEntity<?> deleteProduct(int id) {
+        Product product = productRepo.findById(id).get();
+
+        if(product.getId() !=-1){
+            productRepo.deleteById(id);
+            return new ResponseEntity<>("Deleted "+product.getId(), HttpStatus.OK);
+        }
+        else{
+        return new ResponseEntity<>("Invalid Id "+product.getId(),HttpStatus.NOT_FOUND);
+        }
+    }
 }
