@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 public class ProductService {
@@ -18,5 +19,16 @@ public class ProductService {
     public ResponseEntity<?> getAllProducts() {
         List<Product> productList = productRepo.findAll();
         return new ResponseEntity<>(productList, HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> addProduct(Product product) {
+        if(Objects.equals(product.getProductName(), "") || Objects.equals(product.getDescription(),"")){
+           return new ResponseEntity<>("Invalid details",HttpStatus.NOT_ACCEPTABLE);
+        }
+        else{
+            productRepo.save(product);
+            return new ResponseEntity<>(product,HttpStatus.OK);
+        }
+
     }
 }
