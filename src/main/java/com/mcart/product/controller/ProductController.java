@@ -30,4 +30,17 @@ public class ProductController {
     public ResponseEntity<?> deleteProduct(@PathVariable int id){
         return productService.deleteProduct(id);
     }
+
+    @GetMapping("/getProductById/{id}")
+    public ResponseEntity<?>getProductById(@PathVariable int id){
+        return productService.getProductById(id);
+
+
+
+    }
+    @PutMapping("/updateProductById/{id}")
+    public ResponseEntity<?>updateProduct(@PathVariable int id,@RequestBody Product product){
+        return productService.updateProduct(id,product);
+
+    }
 }
