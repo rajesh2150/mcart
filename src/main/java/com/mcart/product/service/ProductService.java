@@ -32,6 +32,22 @@ public class ProductService {
 
     }
 
+    public ResponseEntity<?> getProductById(int id) {
+        return new ResponseEntity<>(productRepo.findById(id),HttpStatus.OK);
+    }
+
+    public ResponseEntity<?> updateProduct(int id, Product product) {
+        Product existingProduct=productRepo.findById(id).orElseThrow(()-> new RuntimeException("id not found: "+id));
+        existingProduct.setProductName(product.getProductName());
+        existingProduct.setCategory(product.getCategory());
+        existingProduct.setDescription(product.getDescription());
+        existingProduct.setQuantity(product.getQuantity());
+        existingProduct.setPrice(product.getPrice());
+        return new ResponseEntity<>(productRepo.save(existingProduct),HttpStatus.OK);
+
+
+    }
+
     public ResponseEntity<?> deleteProduct(int id) {
         Product product = productRepo.findById(id).get();
 
