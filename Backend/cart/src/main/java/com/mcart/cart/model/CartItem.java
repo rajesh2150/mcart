@@ -1,4 +1,4 @@
-package com.mcart.cart;
+package com.mcart.cart.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -6,28 +6,17 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 
 @Entity
-public class Product {
+public class CartItem {
+
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
-
     String productName;
-
-    double price;
     String category;
+    double price;
     int quantity;
 
-
-    public Product() {
-    }
-
-    public Product(int id, String productName, String description, double price, String category, int quantity) {
-        this.id = id;
-        this.productName = productName;
-//        this.description = description;
-        this.price = price;
-        this.category = category;
-        this.quantity = quantity;
+    public CartItem() {
     }
 
     public int getId() {
@@ -46,15 +35,6 @@ public class Product {
         this.productName = productName;
     }
 
-    
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
-
     public String getCategory() {
         return category;
     }
@@ -63,11 +43,27 @@ public class Product {
         this.category = category;
     }
 
+    public double getPrice() {
+        return price;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     public int getQuantity() {
         return quantity;
     }
 
     public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
+    public CartItem(int id, String productName, String category, double price, int quantity) {
+        this.id = id;
+        this.productName = productName;
+        this.category = category;
+        this.price = price;
         this.quantity = quantity;
     }
 }
