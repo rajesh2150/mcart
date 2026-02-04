@@ -18,4 +18,14 @@ public class cartController {
     public ResponseEntity<?>additem(@PathVariable int id, @PathVariable int quantity){
         return cartservice.additem(id,quantity);
     }
+
+    @GetMapping("/getAll")
+    public ResponseEntity<?> getAllItems(){
+        return cartservice.getAllItems();
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public ResponseEntity<?> deleteById(@PathVariable int id){
+        return cartservice.deleteById(id);
+    }
 }
