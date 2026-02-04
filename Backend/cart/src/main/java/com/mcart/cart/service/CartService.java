@@ -26,7 +26,7 @@ public class CartService {
 
     public ResponseEntity<CartItem> additem(int id, int quantity) {
         ProductDto product= productFeignClient.getProductById(id);
-        CartItem item=new CartItem( id,product.getProductName(),
+        CartItem item=new CartItem( 0,product.getProductName(),
                 product.getCategory(),
                 product.getPrice(),
                 quantity);

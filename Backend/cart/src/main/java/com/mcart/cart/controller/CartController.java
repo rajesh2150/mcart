@@ -14,9 +14,9 @@ public class CartController {
     @Autowired
     CartService cartservice;
 
-    @PutMapping("/additem/{productId}")
-    public ResponseEntity<?>additem(@PathVariable int id, @PathVariable int quantity){
-        return cartservice.additem(id,quantity);
+    @PostMapping("/additem/{productId}")
+    public ResponseEntity<?>additem(@PathVariable int productId, @RequestParam int quantity){
+        return cartservice.additem(productId,quantity);
     }
 
     @GetMapping("/getAll")
