@@ -1,9 +1,11 @@
-package controller;
+package com.mcart.cart.controller;
 
+import com.mcart.cart.service.CartService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import service.CartService;
+
+
 
 @RestController
 @RequestMapping("/app/cart")
