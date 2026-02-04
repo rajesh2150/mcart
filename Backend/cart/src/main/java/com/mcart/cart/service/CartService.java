@@ -1,6 +1,8 @@
 package com.mcart.cart.service;
 
+import com.mcart.cart.feignclient.ProductFeignClient;
 import com.mcart.cart.model.CartItem;
+import com.mcart.cart.model.ProductDto;
 import com.mcart.cart.repo.CartRepository;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -11,15 +13,29 @@ import java.util.List;
 @Service
 public class CartService {
 
-    CartRepository cartRepository;
+    private final CartRepository cartRepository;
+    private CartRepository cartrepository;
 
-    public CartService(CartRepository cartRepository){
+    private final ProductFeignClient productFeignClient;
+
+    public CartService(CartRepository cartRepository, ProductFeignClient productFeignClient) {
         this.cartRepository = cartRepository;
+        this.productFeignClient = productFeignClient;
+    }
+
+
+    public ResponseEntity<CartItem> additem(int id, int quantity) {
+        ProductDto product= productFeignClient.getProductById(id);
+        CartItem item=new CartItem( id,product.getProductName(),
+                product.getCategory(),
+                product.getPrice(),
+                quantity);
+        return new ResponseEntity<>(cartRepository.save(item), HttpStatus.OK);
     }
 
     public ResponseEntity<?> getAllItems() {
-       List<CartItem> cartItems = cartRepository.findAll();
-       return new ResponseEntity<>(cartItems, HttpStatus.OK);
+        List<CartItem> cartItems = cartRepository.findAll();
+        return new ResponseEntity<>(cartItems, HttpStatus.OK);
     }
 
     public ResponseEntity<?> deleteById(int id) {
@@ -33,9 +49,4 @@ public class CartService {
             return new ResponseEntity<>("Deleted "+id, HttpStatus.OK);
         }
     }
-
-//    public ResponseEntity<?> additem(int id, int quantity) {
-//
-//
-//    }
 }
