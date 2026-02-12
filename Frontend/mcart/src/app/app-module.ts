@@ -6,6 +6,7 @@ import { App } from './app';
 import { Navbar } from './navbar/navbar';
 import { Home } from './home/home';
 import { Cart } from './cart/cart';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { Cart } from './cart/cart';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
   ],
   providers: [
     provideBrowserGlobalErrorListeners(),
