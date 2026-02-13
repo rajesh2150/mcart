@@ -1,0 +1,38 @@
+<div class="container my-5">
+  <div class="card shadow p-4">
+    <div class="text-center">
+      <img [src]="company.logo" alt="{{company.name}}" class="mb-3 logo">
+      <h2>{{ company.name }}</h2>
+      <p class="text-muted">{{ company.description }}</p>
+    </div>
+
+    <hr>
+
+    <div class="row text-center mt-4">
+      <div class="col-md-3 col-sm-6 mb-3">
+        <h5>Founded</h5>
+        <p>{{ company.founded }}</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <h5>Employees</h5>
+        <p>{{ company.employees }}</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <h5>Email</h5>
+        <p>{{ company.email }}</p>
+      </div>
+      <div class="col-md-3 col-sm-6 mb-3">
+        <h5>Phone</h5>
+        <p>{{ company.phone }}</p>
+      </div>
+    </div>
+
+    <hr>
+
+    <div class="text-center mt-3">
+      <h5>Address</h5>
+      <p>{{ company.address }}</p>
+    </div>
+  </div>
+</div>
+<a href="/">Home</a>

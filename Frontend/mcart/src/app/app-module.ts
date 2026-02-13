@@ -10,6 +10,8 @@ import { Product } from './product/product';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { Addproduct } from './addproduct/addproduct';
+import { ProductDetailsComponent } from './product-details-component/product-details-component';
+import { Mcart } from './mcart/mcart';
 
 @NgModule({
   declarations: [
@@ -18,7 +20,9 @@ import { Addproduct } from './addproduct/addproduct';
     Home,
     Cart,
     Product,
-    Addproduct
+    Addproduct,
+    ProductDetailsComponent,
+    Mcart
   ],
   imports: [
     BrowserModule,

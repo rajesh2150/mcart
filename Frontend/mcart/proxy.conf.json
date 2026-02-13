@@ -4,5 +4,11 @@
     "secure": false,
     "changeOrigin": true,
     "logLevel": "debug"
+  },
+  "/app": {
+    "target": "http://13.126.4.32:9696",
+    "secure": false,
+    "changeOrigin": true,
+    "logLevel": "debug"
   }
 }

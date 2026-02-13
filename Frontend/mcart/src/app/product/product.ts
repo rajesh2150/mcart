@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { ProductServise } from '../services/product-servise';
 import { FormBuilder } from '@angular/forms';
+import { CartService } from '../services/cart-service';
+import {  ProductModel } from '../../models/product.model';
 
 @Component({
   selector: 'app-product',
@@ -9,7 +11,7 @@ import { FormBuilder } from '@angular/forms';
   styleUrl: './product.css',
 })
 export class Product {
-  constructor(private productservise :ProductServise,private fb: FormBuilder){}
+  constructor(private productservise :ProductServise,private fb: FormBuilder,private cartService: CartService){}
 
   ngOnInit() {
     this.displayProducts(); // Fetch data as soon as the page loads
@@ -44,6 +46,7 @@ export class Product {
     this.filteredProducts = this.productlist;
   } else {
     this.filteredProducts = this.productlist.filter((p: any) => p.category === category);
+  } 
   }
-}
+ 
 }

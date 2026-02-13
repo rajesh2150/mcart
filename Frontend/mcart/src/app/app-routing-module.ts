@@ -4,6 +4,8 @@ import { Navbar } from './navbar/navbar';
 import { Home } from './home/home';
 import { Cart } from './cart/cart';
 import { Addproduct } from './addproduct/addproduct';
+import { ProductDetailsComponent } from './product-details-component/product-details-component';
+import { Mcart } from './mcart/mcart';
 
 const routes: Routes = [
   {
@@ -15,6 +17,14 @@ const routes: Routes = [
   },{
     component:Addproduct,
     path:'addproduct'
+  },
+  {
+    component:ProductDetailsComponent,
+    path:'product/:id'
+  },
+  {
+    component:Mcart,
+    path:'mcart'
   }
 ];
 

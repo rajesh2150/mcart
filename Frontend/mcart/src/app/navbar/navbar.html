@@ -1,5 +1,7 @@
-<nav class="navbar">
-  <h1>Mcart</h1>
+<!-- <nav class="navbar">
+  <h1>
+    <a href="\mcart" class="mcart-link" >Mcart</a>
+</h1>>
 
   <div class="search-group">
     <input type="text" placeholder="search here...">
@@ -9,10 +11,37 @@
 
   <a href="/cart" class="cart-link">cart</a>
 
-</nav>
+</nav> -->
 <!-- <div class="categories">
   <a href="#">Men</a>
   <a href="#">Women</a>
   <a href="#">Electronics</a>
   <a href="#">Kitchen</a>
 </div> -->
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container">
+    <!-- Logo pointing to MCart -->
+    <a class="navbar-brand" [routerLink]="['/mcart']">
+      <img src="assets/logo.webp" alt="MCart Logo" class="navbar-logo">
+    </a>
+
+    <!-- Keep rest of navbar intact -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    
+    <div class="collapse navbar-collapse" id="navbarNav">
+        <div class="search-group">
+    <input type="text" placeholder="search here...">
+    <button>submit</button>
+      </div>
+
+      <ul class="navbar-nav ms-auto">
+        <!-- <li class="nav-item"><a class="nav-link" [routerLink]="['/']">Home</a></li> -->
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/addproducts']">Add Products</a></li>
+        <li class="nav-item"><a class="nav-link" [routerLink]="['/cart']">Cart</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

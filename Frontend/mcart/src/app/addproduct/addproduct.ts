@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductServise } from '../services/product-servise';
-import { Product } from '../../models/product.model';
+import { ProductModel } from '../../models/product.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,11 +9,11 @@ import { Router } from '@angular/router';
   templateUrl: './addproduct.html',
   styleUrl: './addproduct.css',
 })
-export class Addproduct implements OnInit {
+export class Addproduct {
   constructor(private productservice:ProductServise, private router: Router){}
   
 
-  newProduct: Product = {
+  newProduct: ProductModel = {
     productName: '',
     description: '',
     price: 0,
@@ -21,9 +21,7 @@ export class Addproduct implements OnInit {
     quantity: 0
   };
   
-  ngOnInit() {
-   // Fetch data as soon as the page loads
-  }
+ 
    saveProduct() {
     this.productservice.saveProduct(this.newProduct).subscribe({
       next: (res) => {

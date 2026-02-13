@@ -1,0 +1,18 @@
+<div *ngIf="product">
+  <h2>{{ product.productName }}</h2>
+  <img [src]="product.image || 'assets/products/default.jpg'" width="250">
+  <p>{{ product.description }}</p>
+  <h4>₹{{ product.price }}</h4>
+
+  <div>
+    <button (click)="decreaseQuantity()">-</button>
+    <span style="margin: 0 10px;">{{ quantity }}</span>
+    <button (click)="increaseQuantity()">+</button>
+  </div>
+
+  <button class="btn btn-primary" (click)="addToCart()">Add to Cart</button>
+</div>
+
+<ng-template #loading>
+  <p>Loading product details...</p>
+</ng-template>
