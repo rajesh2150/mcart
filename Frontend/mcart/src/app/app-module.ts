@@ -6,20 +6,28 @@ import { App } from './app';
 import { Navbar } from './navbar/navbar';
 import { Home } from './home/home';
 import { Cart } from './cart/cart';
+
 import { FormsModule } from '@angular/forms';
+
+import { Product } from './product/product';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { Addproduct } from './addproduct/addproduct';
+
 
 @NgModule({
   declarations: [
     App,
     Navbar,
     Home,
-    Cart
+    Cart,
+    Product,
+    Addproduct
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
-  ],
+    HttpClientModule,
+    FormsModule,  ],
   providers: [
     provideBrowserGlobalErrorListeners(),
   ],

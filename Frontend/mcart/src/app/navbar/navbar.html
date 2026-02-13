@@ -2,10 +2,9 @@
   <h1>Mcart</h1>
 
   <div class="search-group">
-    <input type="text" placeholder="search here..." [(ngModel)]="searchText">
-
-    <button (click)="onSearch()">Submit</button>
-  </div>
+  <input type="text" [(ngModel)]="searchText" placeholder="Search here..." />
+  <button (click)="onSearch()">Search</button>
+</div>
 
   <a href="/cart" class="cart-link">cart</a>
 </nav>

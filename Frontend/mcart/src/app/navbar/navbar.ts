@@ -3,16 +3,18 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
+  standalone: false,
   templateUrl: './navbar.html',
+   styleUrls: ['./navbar.css'] 
 })
 export class Navbar {
-
   searchText: string = '';
 
   constructor(private router: Router) {}
 
   onSearch() {
-    this.router.navigate(['/home'], {
+    // Navigate to home with query parameter
+    this.router.navigate(['/'], {
       queryParams: { search: this.searchText }
     });
   }
