@@ -1,0 +1,155 @@
+/* MAIN CONTAINER */
+.product-container {
+  display: flex;
+  gap: 50px;
+  padding: 40px;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #fff5f5, #ffe5d9);
+  border-radius: 12px;
+  margin: 30px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* LEFT IMAGE */
+.product-image img {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #fff;
+  padding: 20px;
+  transition: transform 0.3s ease;
+}
+
+.product-image img:hover {
+  transform: scale(1.05);
+}
+
+/* RIGHT DETAILS */
+.product-details {
+  max-width: 500px;
+}
+
+.product-details h2 {
+  font-size: 30px;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.description {
+  font-size: 16px;
+  color: #555;
+  margin-bottom: 20px;
+}
+
+.price {
+  font-size: 26px;
+  color: #ff3f5c;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* QUANTITY BOX */
+.quantity-box {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.quantity-box button {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: none;
+  background-color: #ff5f6d;
+  color: #fff;
+  font-size: 20px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.quantity-box button:hover {
+  background-color: #ff3f5c;
+  transform: scale(1.1);
+}
+
+.quantity-box span {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* ADD TO CART BUTTON */
+.add-cart-btn {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.add-cart-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+}
+
+/* LOADING TEXT */
+.loading-text {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 40px;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+  .product-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .product-image img {
+    width: 280px;
+    height: 280px;
+  }
+}
+.home-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 22px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  background: linear-gradient(90deg, #ff5f6d, #ffc371);
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Hover Effect */
+.home-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+  color: #fff;
+}
+
+/* Click Effect */
+.home-btn:active {
+  transform: scale(0.95);
+}
+
+/* Icon Animation */
+.home-icon {
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.home-btn:hover .home-icon {
+  transform: rotate(-15deg);
+}

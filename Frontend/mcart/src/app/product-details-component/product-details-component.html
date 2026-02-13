@@ -1,6 +1,41 @@
-<div *ngIf="product">
+
+<a routerLink="/" class="home-btn">
+  Home
+</a>
+<div *ngIf="product; else loading" class="product-container">
+
+  <!-- LEFT: Product Image -->
+  <div class="product-image">
+    <img [src]="`assets/${product.productName}.jpg`"
+         [alt]="product.productName">
+  </div>
+
+  <!-- RIGHT: Product Details -->
+  <div class="product-details">
+    <h2>{{ product.productName }}</h2>
+    <p class="description">{{ product.description }}</p>
+
+    <h3 class="price">₹{{ product.price }}</h3>
+
+    <div class="quantity-box">
+      <button (click)="decreaseQuantity()">-</button>
+      <span>{{ quantity }}</span>
+      <button (click)="increaseQuantity()">+</button>
+    </div>
+
+    <button class="add-cart-btn" (click)="addToCart()">
+      🛒 Add to Cart
+    </button>
+  </div>
+
+</div>
+
+<ng-template #loading>
+  <p class="loading-text">Loading product details...</p>
+</ng-template>
+<!-- <div *ngIf="product">
   <h2>{{ product.productName }}</h2>
-  <img [src]="product.image || 'assets/products/default.jpg'" width="250">
+        <img [src]="`assets/${product.productName}.jpg`" class="card-img-top" [alt]="product.productName">
   <p>{{ product.description }}</p>
   <h4>₹{{ product.price }}</h4>
 
@@ -15,4 +50,4 @@
 
 <ng-template #loading>
   <p>Loading product details...</p>
-</ng-template>
+</ng-template> -->
