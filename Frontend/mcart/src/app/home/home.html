@@ -76,7 +76,7 @@
   </div>
 </div>
 
-<div class="categories-container">
+<!-- <div class="categories-container">
   <div></div>
   <div class="categories">
     <p>Men</p>
@@ -85,7 +85,7 @@
     <p>Kitchen</p>
   </div>
   <div></div>
-</div>
+</div> -->
 
 <!-- <div class="card" style="width: 18rem;">
   <img class="card-img-top" src="assets/mouse2.jpg" alt="Card image cap">
@@ -95,5 +95,18 @@
     <a href="#" class="btn btn-primary">Go somewhere</a>
   </div>
 </div> -->
+
+<!-- <div class="product-list">
+  <div *ngFor="let product of filteredProducts" class="card" style="width: 18rem;">
+    <img class="card-img-top" [src]="product.image" alt="Card image cap">
+    <div class="card-body">
+      <h5 class="card-title">{{ product.productName }}</h5>
+      <p class="card-text">{{ product.description }}</p>
+      <p>Price: {{ product.price | currency }}</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
+</div> -->
+
 
 <app-product></app-product>

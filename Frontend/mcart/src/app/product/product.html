@@ -12,19 +12,19 @@
     </button>
   </div>
 
+ 
+
   <!-- Products Grid -->
   <div class="row g-4">
-    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of filteredProducts">
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let product of SearchFilteredProducts">
       <div class="card product-card h-100">
         <div class="card-img-wrapper">
           <!-- <img [src]="product.image || 'assets/products/default.jpg'" class="card-img-top" [alt]="product.productName"> -->
            <a [routerLink]="['/product', product.id]">
-              <img 
-                [src]="product.image || 'assets/products/default.jpg'"
-                class="card-img-top"
-                [alt]="product.productName">
+               <img [src]="`assets/${product.productName}.jpg`" class="card-img-top" [alt]="product.productName">
            </a>
 
+         
         </div>
         <div class="card-body">
           <h5 class="card-title">{{ product.productName }}</h5>

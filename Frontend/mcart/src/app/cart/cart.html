@@ -1,7 +1,6 @@
-<a href="/">Home</a>
-<div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
+<a routerLink="/" class="home-btn"> Home</a><div class="cart-page" *ngIf="cartItems.length > 0; else emptyCart">
   <div class="cart-item" *ngFor="let item of cartItems">
-    <img [src]="item.image || 'assets/products/default.jpg'" alt="{{item.productName}}" width="100">
+               <img [src]="`assets/${item.productName}.jpg`" class="card-img-top" [alt]="item.productName">
 
     <div class="cart-item-details">
       <h4>{{ item.productName }}</h4>
@@ -26,5 +25,10 @@
 </div>
 
 <ng-template #emptyCart>
-  <p>Your cart is empty.</p>
+  <div class="empty-cart">
+    <div class="empty-icon">🛒</div>
+    <h2>Your Cart is Empty</h2>
+    <p>Looks like you haven’t added anything yet.</p>
+    <a routerLink="/" class="shop-btn">Continue Shopping</a>
+  </div>
 </ng-template>

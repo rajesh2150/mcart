@@ -1,6 +1,6 @@
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {  ProductModel } from '../../models/product.model';
+import { ProductModel } from '../models/product.model';
 import { Observable } from 'rxjs/internal/Observable';
 
 @Injectable({
@@ -13,8 +13,8 @@ export class ProductServise {
   }
   geturl="/api/product/getAllProducts";
 
-  getAllProductsFromServices(){
-  return this.http.get(this.geturl);
+  getAllProductsFromServices():Observable<ProductModel[]> {
+  return this.http.get<ProductModel[]>(this.geturl);
  }
   
  addurl="/api/product/addProduct";
